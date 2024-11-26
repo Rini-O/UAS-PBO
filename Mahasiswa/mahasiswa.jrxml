@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3ff181f5-b294-4b6d-b8dc-b6648da7018c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[select*from mahasiswa]]>
+	</queryString>
+	<field name="nim" class="java.lang.String"/>
+	<field name="nama" class="java.lang.String"/>
+	<field name="alamat" class="java.lang.String"/>
+	<field name="asalsma" class="java.lang.String"/>
+	<field name="namaortu" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="208" y="37" width="389" height="62" forecolor="#000066" uuid="9e9da23c-de56-4f0d-9402-bd9d93c30679"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Data Mahasiswa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="305" y="99" width="196" height="22" forecolor="#000066" uuid="508f82c0-1894-436e-a4e2-094b566d2f21"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Sistem Informasi 2045]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="160" height="121" uuid="8ff2b403-9851-47ca-9f27-51fed7657839"/>
+				<imageExpression><![CDATA["C:\\Users\\acer_user\\Pictures\\elemen\\kiri atas.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="660" y="0" width="140" height="136" uuid="c4034aed-6b25-4311-9df6-a6f8f6cec14c"/>
+				<imageExpression><![CDATA["C:\\Users\\acer_user\\Pictures\\elemen\\Untitled design (4).png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="f7d6472d-31fc-41be-a0c5-5f4bcf20ff7c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="160" height="15" forecolor="#000066" uuid="a3b7d6d3-1511-46a4-af92-2bd951e28684"/>
+				<text><![CDATA[NIM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="160" y="0" width="160" height="15" forecolor="#000066" uuid="51ddbd6d-3858-4da6-900b-155d1dd09652"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="320" y="0" width="160" height="15" forecolor="#000066" uuid="272d165a-2779-4517-9325-5f3fa082f3e2"/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="480" y="0" width="160" height="15" forecolor="#000066" uuid="d8aa99d2-932d-4ed4-89a4-90c4e9f9b907"/>
+				<text><![CDATA[Asal SMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="640" y="0" width="160" height="15" forecolor="#000066" uuid="2fddc8d6-71c3-4fdd-b546-fc7baba11fb0"/>
+				<text><![CDATA[Nama Orang Tua]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="5ba8825f-4fda-4be5-ae5e-7e7a2084fc2f"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="160" height="15" uuid="f6e3aef1-d3b8-485c-a2e2-82aacb1ffd3f"/>
+					<textFieldExpression><![CDATA[$F{nim}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="160" y="0" width="160" height="15" uuid="a29a0f93-9a6d-474c-b05e-c90bd7b31783"/>
+					<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="320" y="0" width="160" height="15" uuid="99425676-1ff2-464d-b1e4-226388123af7"/>
+					<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="480" y="0" width="160" height="15" uuid="c1ba7a67-2333-4d38-9970-11763cf32c0a"/>
+					<textFieldExpression><![CDATA[$F{asalsma}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="640" y="0" width="160" height="15" uuid="22d47af9-437d-46cd-be4a-c947dc527f5c"/>
+					<textFieldExpression><![CDATA[$F{namaortu}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="db644649-aaa8-4a93-9e0e-0b0351760d69"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="154" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="24" width="129" height="130" uuid="af3e460d-07dd-4936-86bc-a53544254281"/>
+				<imageExpression><![CDATA["C:\\Users\\acer_user\\Pictures\\elemen\\sisi kiri.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="662" y="21" width="140" height="130" uuid="5b307fbc-ecae-461c-85bb-569f60622ac8"/>
+				<imageExpression><![CDATA["C:\\Users\\acer_user\\Pictures\\elemen\\Untitled design (5).png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
